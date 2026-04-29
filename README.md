@@ -15,8 +15,8 @@ El proyecto tiene como finalidad crear un entorno que permita:
 ________________________________________
 Uso básico
 1.	Clonar el repositorio: 
-git clone https://github.com/tu-usuario/tu-repo.git &&
-cd tu-repo
+git clone https://github.com/wanma9/web3-security-lab.git &&
+cd web3-security-lab
 2.	Instalar las herramientas necesarias siguiendo la documentación en /docs. 
 3.	Ejecutar los scripts de análisis: 
 bash scripts/run_analysis.sh
