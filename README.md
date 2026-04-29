@@ -6,6 +6,7 @@ El entorno está diseñado para ser reproducible y completamente online, sin uso
 ________________________________________
 Objetivo
 El proyecto tiene como finalidad crear un entorno que permita:
+
 •	Instalar herramientas del ecosistema Ethereum/Solidity 
 •	Analizar contratos inteligentes vulnerables de ejemplo 
 •	Automatizar la ejecución de análisis 
