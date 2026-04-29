@@ -15,7 +15,7 @@ El proyecto tiene como finalidad crear un entorno que permita:
 ________________________________________
 Uso básico
 1.	Clonar el repositorio: 
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/tu-usuario/tu-repo.git &&
 cd tu-repo
 2.	Instalar las herramientas necesarias siguiendo la documentación en /docs. 
 3.	Ejecutar los scripts de análisis: 
