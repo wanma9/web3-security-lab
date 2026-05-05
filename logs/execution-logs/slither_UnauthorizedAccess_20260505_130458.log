@@ -1,0 +1,26 @@
+[INFO] Ejecutando Slither sobre: contracts/vulnerable-examples/UnauthorizedAccess.sol
+[INFO] Contrato: UnauthorizedAccess
+[INFO] Reporte: reports/slither/slither_UnauthorizedAccess_20260505_130458.json
+
+'solc --version' running
+'solc contracts/vulnerable-examples/UnauthorizedAccess.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples' running
+
+Detector: solc-version
+Version constraint ^0.8.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- FullInlinerNonExpressionSplitArgumentEvaluationOrder
+	- MissingSideEffectsOnSelectorAccess
+	- AbiReencodingHeadOverflowWithStaticArrayCleanup
+	- DirtyBytesArrayToStorage
+	- DataLocationChangeInInternalOverride
+	- NestedCalldataArrayAbiReencodingSizeValidation
+	- SignedImmutables
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching.
+It is used by:
+	- ^0.8.0 (contracts/vulnerable-examples/UnauthorizedAccess.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Detector: immutable-states
+UnauthorizedAccess.owner (contracts/vulnerable-examples/UnauthorizedAccess.sol#5) should be immutable 
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-immutable
+contracts/vulnerable-examples/UnauthorizedAccess.sol analyzed (1 contracts with 101 detectors), 2 result(s) found

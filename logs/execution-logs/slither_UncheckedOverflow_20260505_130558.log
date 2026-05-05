@@ -1,0 +1,22 @@
+[INFO] Ejecutando Slither sobre: contracts/vulnerable-examples/UncheckedOverflow.sol
+[INFO] Contrato: UncheckedOverflow
+[INFO] Reporte: reports/slither/slither_UncheckedOverflow_20260505_130558.json
+
+'solc --version' running
+'solc contracts/vulnerable-examples/UncheckedOverflow.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples' running
+
+Detector: solc-version
+Version constraint ^0.8.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- FullInlinerNonExpressionSplitArgumentEvaluationOrder
+	- MissingSideEffectsOnSelectorAccess
+	- AbiReencodingHeadOverflowWithStaticArrayCleanup
+	- DirtyBytesArrayToStorage
+	- DataLocationChangeInInternalOverride
+	- NestedCalldataArrayAbiReencodingSizeValidation
+	- SignedImmutables
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching.
+It is used by:
+	- ^0.8.0 (contracts/vulnerable-examples/UncheckedOverflow.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+contracts/vulnerable-examples/UncheckedOverflow.sol analyzed (1 contracts with 101 detectors), 1 result(s) found

@@ -1,0 +1,39 @@
+[INFO] Ejecutando Slither sobre: contracts/vulnerable-examples/SimpleReentrancy.sol
+[INFO] Contrato: SimpleReentrancy
+[INFO] Reporte: reports/slither/slither_SimpleReentrancy_20260505_130444.json
+
+'solc --version' running
+'solc contracts/vulnerable-examples/SimpleReentrancy.sol --combined-json abi,ast,bin,bin-runtime,srcmap,srcmap-runtime,userdoc,devdoc,hashes --allow-paths .,/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples' running
+
+Detector: reentrancy-eth
+Reentrancy in SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19):
+	External calls:
+	- (success,None) = msg.sender.call{value: amount}() (contracts/vulnerable-examples/SimpleReentrancy.sol#15)
+	State variables written after the call(s):
+	- balances[msg.sender] -= amount (contracts/vulnerable-examples/SimpleReentrancy.sol#18)
+	SimpleReentrancy.balances (contracts/vulnerable-examples/SimpleReentrancy.sol#5) can be used in cross function reentrancies:
+	- SimpleReentrancy.balances (contracts/vulnerable-examples/SimpleReentrancy.sol#5)
+	- SimpleReentrancy.deposit() (contracts/vulnerable-examples/SimpleReentrancy.sol#7-9)
+	- SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1
+
+Detector: solc-version
+Version constraint ^0.8.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)
+	- FullInlinerNonExpressionSplitArgumentEvaluationOrder
+	- MissingSideEffectsOnSelectorAccess
+	- AbiReencodingHeadOverflowWithStaticArrayCleanup
+	- DirtyBytesArrayToStorage
+	- DataLocationChangeInInternalOverride
+	- NestedCalldataArrayAbiReencodingSizeValidation
+	- SignedImmutables
+	- ABIDecodeTwoDimensionalArrayMemory
+	- KeccakCaching.
+It is used by:
+	- ^0.8.0 (contracts/vulnerable-examples/SimpleReentrancy.sol#2)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity
+
+Detector: low-level-calls
+Low level call in SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19):
+	- (success,None) = msg.sender.call{value: amount}() (contracts/vulnerable-examples/SimpleReentrancy.sol#15)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+contracts/vulnerable-examples/SimpleReentrancy.sol analyzed (1 contracts with 101 detectors), 3 result(s) found

@@ -1,0 +1,435 @@
+{
+  "success": true,
+  "error": null,
+  "results": {
+    "detectors": [
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "withdraw",
+            "source_mapping": {
+              "start": 231,
+              "length": 350,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "SimpleReentrancy",
+                "source_mapping": {
+                  "start": 57,
+                  "length": 526,
+                  "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "withdraw(uint256)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "(success,None) = msg.sender.call{value: amount}()",
+            "source_mapping": {
+              "start": 435,
+              "length": 53,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                15
+              ],
+              "starting_column": 9,
+              "ending_column": 62
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "withdraw",
+                "source_mapping": {
+                  "start": 231,
+                  "length": 350,
+                  "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SimpleReentrancy",
+                    "source_mapping": {
+                      "start": 57,
+                      "length": 526,
+                      "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "withdraw(uint256)"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "external_calls"
+            }
+          },
+          {
+            "type": "node",
+            "name": "balances[msg.sender] -= amount",
+            "source_mapping": {
+              "start": 544,
+              "length": 30,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                18
+              ],
+              "starting_column": 9,
+              "ending_column": 39
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "withdraw",
+                "source_mapping": {
+                  "start": 231,
+                  "length": 350,
+                  "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SimpleReentrancy",
+                    "source_mapping": {
+                      "start": 57,
+                      "length": 526,
+                      "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "withdraw(uint256)"
+                }
+              }
+            },
+            "additional_fields": {
+              "underlying_type": "variables_written",
+              "variable_name": "balances"
+            }
+          }
+        ],
+        "description": "Reentrancy in SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19):\n\tExternal calls:\n\t- (success,None) = msg.sender.call{value: amount}() (contracts/vulnerable-examples/SimpleReentrancy.sol#15)\n\tState variables written after the call(s):\n\t- balances[msg.sender] -= amount (contracts/vulnerable-examples/SimpleReentrancy.sol#18)\n\tSimpleReentrancy.balances (contracts/vulnerable-examples/SimpleReentrancy.sol#5) can be used in cross function reentrancies:\n\t- SimpleReentrancy.balances (contracts/vulnerable-examples/SimpleReentrancy.sol#5)\n\t- SimpleReentrancy.deposit() (contracts/vulnerable-examples/SimpleReentrancy.sol#7-9)\n\t- SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19)\n",
+        "markdown": "Reentrancy in [SimpleReentrancy.withdraw(uint256)](contracts/vulnerable-examples/SimpleReentrancy.sol#L11-L19):\n\tExternal calls:\n\t- [(success,None) = msg.sender.call{value: amount}()](contracts/vulnerable-examples/SimpleReentrancy.sol#L15)\n\tState variables written after the call(s):\n\t- [balances[msg.sender] -= amount](contracts/vulnerable-examples/SimpleReentrancy.sol#L18)\n\t[SimpleReentrancy.balances](contracts/vulnerable-examples/SimpleReentrancy.sol#L5) can be used in cross function reentrancies:\n\t- [SimpleReentrancy.balances](contracts/vulnerable-examples/SimpleReentrancy.sol#L5)\n\t- [SimpleReentrancy.deposit()](contracts/vulnerable-examples/SimpleReentrancy.sol#L7-L9)\n\t- [SimpleReentrancy.withdraw(uint256)](contracts/vulnerable-examples/SimpleReentrancy.sol#L11-L19)\n",
+        "first_markdown_element": "contracts/vulnerable-examples/SimpleReentrancy.sol#L11-L19",
+        "id": "aff46c4782f6bbb66e709dec72a76e5b50f6d6f3e21ebd637938c162270d5a98",
+        "check": "reentrancy-eth",
+        "impact": "High",
+        "confidence": "Medium"
+      },
+      {
+        "elements": [
+          {
+            "type": "pragma",
+            "name": "^0.8.0",
+            "source_mapping": {
+              "start": 32,
+              "length": 23,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                2
+              ],
+              "starting_column": 1,
+              "ending_column": 24
+            },
+            "type_specific_fields": {
+              "directive": [
+                "solidity",
+                "^",
+                "0.8",
+                ".0"
+              ]
+            }
+          }
+        ],
+        "description": "Version constraint ^0.8.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- FullInlinerNonExpressionSplitArgumentEvaluationOrder\n\t- MissingSideEffectsOnSelectorAccess\n\t- AbiReencodingHeadOverflowWithStaticArrayCleanup\n\t- DirtyBytesArrayToStorage\n\t- DataLocationChangeInInternalOverride\n\t- NestedCalldataArrayAbiReencodingSizeValidation\n\t- SignedImmutables\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching.\nIt is used by:\n\t- ^0.8.0 (contracts/vulnerable-examples/SimpleReentrancy.sol#2)\n",
+        "markdown": "Version constraint ^0.8.0 contains known severe issues (https://solidity.readthedocs.io/en/latest/bugs.html)\n\t- FullInlinerNonExpressionSplitArgumentEvaluationOrder\n\t- MissingSideEffectsOnSelectorAccess\n\t- AbiReencodingHeadOverflowWithStaticArrayCleanup\n\t- DirtyBytesArrayToStorage\n\t- DataLocationChangeInInternalOverride\n\t- NestedCalldataArrayAbiReencodingSizeValidation\n\t- SignedImmutables\n\t- ABIDecodeTwoDimensionalArrayMemory\n\t- KeccakCaching.\nIt is used by:\n\t- [^0.8.0](contracts/vulnerable-examples/SimpleReentrancy.sol#L2)\n",
+        "first_markdown_element": "contracts/vulnerable-examples/SimpleReentrancy.sol#L2",
+        "id": "b856e689ac90296462a0d8795b2fd1067cd169590134a181e3b075599d1afaf7",
+        "check": "solc-version",
+        "impact": "Informational",
+        "confidence": "High"
+      },
+      {
+        "elements": [
+          {
+            "type": "function",
+            "name": "withdraw",
+            "source_mapping": {
+              "start": 231,
+              "length": 350,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19
+              ],
+              "starting_column": 5,
+              "ending_column": 6
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "contract",
+                "name": "SimpleReentrancy",
+                "source_mapping": {
+                  "start": 57,
+                  "length": 526,
+                  "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20
+                  ],
+                  "starting_column": 1,
+                  "ending_column": 2
+                }
+              },
+              "signature": "withdraw(uint256)"
+            }
+          },
+          {
+            "type": "node",
+            "name": "(success,None) = msg.sender.call{value: amount}()",
+            "source_mapping": {
+              "start": 435,
+              "length": 53,
+              "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+              "is_dependency": false,
+              "lines": [
+                15
+              ],
+              "starting_column": 9,
+              "ending_column": 62
+            },
+            "type_specific_fields": {
+              "parent": {
+                "type": "function",
+                "name": "withdraw",
+                "source_mapping": {
+                  "start": 231,
+                  "length": 350,
+                  "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                  "is_dependency": false,
+                  "lines": [
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ],
+                  "starting_column": 5,
+                  "ending_column": 6
+                },
+                "type_specific_fields": {
+                  "parent": {
+                    "type": "contract",
+                    "name": "SimpleReentrancy",
+                    "source_mapping": {
+                      "start": 57,
+                      "length": 526,
+                      "filename_relative": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_absolute": "/datos/home/pc/Escritorio/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "filename_short": "contracts/vulnerable-examples/SimpleReentrancy.sol",
+                      "is_dependency": false,
+                      "lines": [
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20
+                      ],
+                      "starting_column": 1,
+                      "ending_column": 2
+                    }
+                  },
+                  "signature": "withdraw(uint256)"
+                }
+              }
+            }
+          }
+        ],
+        "description": "Low level call in SimpleReentrancy.withdraw(uint256) (contracts/vulnerable-examples/SimpleReentrancy.sol#11-19):\n\t- (success,None) = msg.sender.call{value: amount}() (contracts/vulnerable-examples/SimpleReentrancy.sol#15)\n",
+        "markdown": "Low level call in [SimpleReentrancy.withdraw(uint256)](contracts/vulnerable-examples/SimpleReentrancy.sol#L11-L19):\n\t- [(success,None) = msg.sender.call{value: amount}()](contracts/vulnerable-examples/SimpleReentrancy.sol#L15)\n",
+        "first_markdown_element": "contracts/vulnerable-examples/SimpleReentrancy.sol#L11-L19",
+        "id": "e39890e933d98b1b3508aa3e26735d0fadb4adaa65caeddbd2c5e33b18f0cc61",
+        "check": "low-level-calls",
+        "impact": "Informational",
+        "confidence": "High"
+      }
+    ]
+  }
+}
