@@ -22,8 +22,3 @@ cd web3-security-lab
 3.	Ejecutar los scripts de análisis: 
 bash scripts/run_analysis.sh
 4.	Revisar los resultados en la carpeta /logs.
-<<<<<<< HEAD
-
-
-=======
->>>>>>> docs/fase-estudio-inicial
