@@ -15,7 +15,7 @@ Este proyecto está pensado para hacerse **100% online**, usando GitHub para el 
 
 El proyecto combina administración de sistemas, documentación técnica, automatización, bases de datos, análisis de logs y una introducción guiada a seguridad en contratos inteligentes.
 
----
+
 
 ## 2. Objetivo general
 
@@ -29,7 +29,7 @@ Ese repositorio deberá contener un laboratorio reproducible que permita analiza
 
 Al finalizar las prácticas, una persona externa debería poder entrar en vuestro repositorio, leer el `README.md`, seguir los pasos y conseguir ejecutar el laboratorio sin depender de vosotros.
 
----
+
 
 ## 3. En qué consiste
 
@@ -43,7 +43,7 @@ El proyecto **consiste en**:
 - automatizar tareas básicas;
 - generar informes técnicos comprensibles.
 
----
+
 
 ## 4. Resultado esperado
 
@@ -86,7 +86,7 @@ web3-security-lab/
 
 No pasa nada si la estructura final cambia, pero debe ser clara, ordenada y fácil de entender.
 
----
+
 
 ## 5. Forma de trabajo recomendada
 
@@ -133,7 +133,7 @@ Instalar Slither y documentar el proceso.
 Otra persona puede seguir la guía y ejecutar Slither correctamente.
 ```
 
----
+
 
 # Fase 1: Investigación y estudio
 
@@ -155,7 +155,7 @@ docs/00-estudio-inicial.md
 
 Ese documento debe explicar, con vuestras propias palabras, lo que habéis aprendido. El objetivo del documento es que os sirva para refrescar, no os lo toméis como un entregable, sino como un documento de apuntes para vosotros.
 
----
+
 
 ## 5.1. Recursos de estudio
 
@@ -215,7 +215,7 @@ Después de leerlos, deberíais poder explicar:
    **sus ejecuciones son irreversibles,**
 
    **Eso significa que si hay un fallo, el sistema lo ejecutará igual… y no hay forma sencilla de deshacerlo.**
----
+
 
 ### B. Solidity
 
@@ -324,7 +324,7 @@ Errores y revert
 
 **No hace falta dominar Solidity para hacer el proyecto, pero sí entender el código básico que vais a analizar.**
 
----
+
 
 ### C. Desarrollo de contratos: Foundry y Hardhat
 
@@ -422,7 +422,7 @@ Hardhat:
 
 **Herramientas como Hardhat permiten automatizar estos procesos y ejecutarlos con comandos, ahorrando tiempo y evitando errores manuales.**
 
----
+
 
 ### D. Seguridad en contratos inteligentes
 
@@ -450,26 +450,103 @@ Recursos:
 
 Conceptos mínimos que debéis estudiar:
 
-- vulnerabilidad;
-- auditoría;
-- análisis estático;
-- análisis dinámico;
-- falso positivo;
-- severidad;
-- impacto;
-- recomendación;
-- prueba de concepto;
-- reentrancy;
-- control de acceso;
-- integer precision / pérdida de precisión;
-- uso incorrecto de `tx.origin`;
-- llamadas externas;
-- oráculos;
-- dependencias inseguras.
+- vulnerabilidad
+  
+   **Es un fallo o debilidad en un contrato inteligente que puede ser explotado para producir un comportamiento no deseado o inseguro.**
+
+
+
+- auditoría
+  
+   **Es el proceso de revisar contratos inteligentes para identificar vulnerabilidades, problemas de lógica o malas prácticas antes de su despliegue.**
+
+
+
+- análisis estático
+  
+   **Es el análisis del código sin ejecutarlo, para detectar patrones de vulnerabilidades y errores directamente en el código fuente.**
+
+
+
+- análisis dinámico
+  
+   **Es el análisis del comportamiento del contrato durante su ejecución, observando cómo responde en diferentes escenarios o inputs.**
+
+
+
+- falso positivo
+  
+   **Es un resultado de una herramienta que indica un problema que en realidad no es una vulnerabilidad real.**
+
+
+
+- severidad
+  
+   **Es una medida de la gravedad de una vulnerabilidad, normalmente basada en su impacto y probabilidad de explotación.**
+
+
+
+- impacto
+  
+   **Es el efecto o consecuencia que puede tener una vulnerabilidad si es explotada, como pérdida de fondos o control del contrato.**
+
+
+
+- recomendación
+  
+   **Es la sugerencia de cómo corregir o mitigar una vulnerabilidad detectada en el contrato.**
+
+
+
+- prueba de concepto
+  
+   **Es un ejemplo práctico que demuestra que una vulnerabilidad puede ser explotada.**
+
+
+
+- reentrancy
+  
+   **Es una vulnerabilidad en la que un contrato externo vuelve a llamar a una función antes de que la ejecución anterior haya terminado, pudiendo alterar el estado de forma inesperada.**
+
+
+
+- control de acceso
+  
+   **Es el mecanismo que restringe qué direcciones o usuarios pueden ejecutar ciertas funciones del contrato.**
+
+
+
+- integer precision / pérdida de precisión
+  
+   **Es un problema derivado del manejo de números enteros, donde pueden ocurrir errores de precisión o redondeo en operaciones matemáticas.**
+
+
+
+- uso incorrecto de tx.origin
+  
+   **Es una mala práctica de seguridad donde se utiliza `tx.origin` para autenticación, lo que puede ser explotado mediante llamadas intermedias.**
+
+
+
+- llamadas externas
+  
+   **Son interacciones con otros contratos que pueden introducir riesgos, especialmente si el contrato externo ejecuta código inesperado.**
+
+
+
+- oráculos
+  
+   **Son fuentes externas de datos que los contratos utilizan para obtener información fuera de la blockchain, lo que puede introducir riesgos si no son fiables.**
+
+
+
+- dependencias inseguras
+  
+   **Son librerías o contratos externos utilizados que pueden contener vulnerabilidades o comportamientos no seguros.**
 
 No es necesario resolver Damn Vulnerable DeFi entero. Es avanzado. Se puede usar como referencia para ver cómo se estructuran laboratorios de seguridad.
 
----
+
 
 ### E. Git, GitHub y documentación
 
@@ -489,18 +566,65 @@ Recursos:
 
 Conceptos mínimos:
 
-- repositorio;
-- commit;
-- branch;
-- pull request;
-- issue;
-- `README.md`;
-- Markdown;
-- `.gitignore`;
-- historial de cambios;
-- documentación técnica.
+- repositorio
+ 
+   **Es un lugar donde se almacena un proyecto junto con todos sus archivos y su historial de cambios.**
 
----
+
+
+- commit
+  
+   **Es un registro de cambios realizados en el repositorio en un momento concreto.**
+
+
+
+- branch
+  
+   **Es una línea de desarrollo independiente dentro de un repositorio que permite trabajar en cambios sin afectar la versión principal.**
+
+
+
+- pull request
+  
+   **Es una solicitud para fusionar cambios de una rama a otra, permitiendo revisar y discutir esos cambios antes de integrarlos.**
+
+
+
+- issue
+  
+   **Es una herramienta para registrar tareas, mejoras o errores dentro de un proyecto.**
+
+
+
+- README.md
+  
+   **Es un archivo que describe el proyecto, explicando qué hace, cómo usarlo y otra información relevante.**
+
+
+
+- Markdown
+  
+   **Es un lenguaje de marcado ligero que permite formatear texto de forma sencilla.**
+
+
+
+- .gitignore
+  
+   **Es un archivo que indica qué archivos o carpetas no deben ser rastreados por el sistema de control de versiones.**
+
+
+
+- historial de cambios
+  
+   **Es el registro completo de todos los commits realizados en un repositorio a lo largo del tiempo.**
+
+
+
+- documentación técnica
+  
+   **Es el conjunto de textos que explican cómo funciona un sistema, cómo usarlo y cómo está construido.**
+
+
 
 ### F. Docker y automatización
 
@@ -517,19 +641,70 @@ Recursos:
 
 Conceptos mínimos:
 
-- contenedor;
-- imagen;
-- Dockerfile;
-- volumen;
-- variable de entorno;
-- workflow;
-- job;
-- step;
-- CI/CD;
-- artefactos de ejecución;
-- logs de pipeline.
+- contenedor
+  
+   **Es una unidad ligera y ejecutable que incluye todo lo necesario para ejecutar una aplicación (código, dependencias, configuraciones).**
 
----
+
+
+- imagen
+  
+   **Es una plantilla inmutable que contiene todo lo necesario para crear un contenedor.**
+
+
+
+- Dockerfile
+  
+   **Es un archivo de texto con instrucciones para construir una imagen de Docker paso a paso.**
+
+
+
+- volumen
+  
+   **Es un mecanismo para persistir datos fuera del contenedor, permitiendo que los datos se mantengan aunque el contenedor se elimine.**
+
+
+
+- variable de entorno
+  
+   **Es un valor configurable que se pasa al contenedor o proceso para modificar su comportamiento sin cambiar el código.**
+
+
+
+- workflow
+  
+   **Es un proceso automatizado definido en un archivo que describe qué acciones ejecutar en un repositorio.**
+
+
+- job
+  
+   **Es un conjunto de pasos que se ejecutan dentro de un mismo entorno en un workflow.**
+
+
+
+- step
+  
+   **Es una tarea individual dentro de un job, como ejecutar un comando o usar una acción.**
+
+
+
+- CI/CD
+  
+   **Es una práctica que automatiza la integración y el despliegue continuo del código mediante pipelines.**
+
+
+
+- artefactos de ejecución
+  
+   **Son los archivos generados durante la ejecución de un workflow, como binarios o reportes, que pueden guardarse y reutilizarse.**
+
+
+
+- logs de pipeline
+  
+   **Son los registros detallados de lo que ocurre durante la ejecución de un workflow o pipeline, útiles para depuración.**
+
+
 
 ### G. SQLite y tratamiento de resultados
 
@@ -546,19 +721,51 @@ Recursos:
 
 Conceptos mínimos:
 
-- tabla;
-- columna;
-- clave primaria;
-- clave foránea;
-- `SELECT`;
-- `INSERT`;
-- `JOIN`;
-- `GROUP BY`;
-- subconsulta;
-- exportación a CSV;
-- importación de datos.
+- tabla
+  
+   **Es una estructura en una base de datos que organiza los datos en filas y columnas.**
 
----
+- columna
+  
+   **Es un campo dentro de una tabla que define un tipo de dato específico para almacenar información.**
+
+- clave primaria
+  
+   **Es una columna (o conjunto de columnas) que identifica de forma única cada fila de una tabla.**
+
+- clave foránea
+  
+   **Es una columna que establece una relación con la clave primaria de otra tabla.**
+
+- `SELECT`
+  
+   **Es una sentencia SQL que se utiliza para consultar y recuperar datos de una base de datos.**
+
+- `INSERT`
+  
+   **Es una sentencia SQL que se utiliza para añadir nuevos registros a una tabla.**
+
+- `JOIN`
+  
+   **Es una operación que permite combinar filas de dos o más tablas basándose en una relación entre ellas.**
+
+- `GROUP BY`
+  
+   **Es una cláusula que agrupa filas que tienen valores iguales en columnas específicas.**
+
+- subconsulta
+  
+   **Es una consulta dentro de otra consulta que se utiliza para obtener datos intermedios.**
+
+- exportación a CSV
+  
+   **Es el proceso de guardar los datos de una base de datos en un archivo con formato CSV (valores separados por comas).**
+
+- importación de datos
+  
+   **Es el proceso de cargar datos externos en una base de datos, por ejemplo desde un archivo CSV.**
+
+
 
 ## 5.2. Entregable de la fase de estudio
 
@@ -613,12 +820,12 @@ Lista de enlaces consultados.
 Ejemplo de tabla para vulnerabilidades:
 
 | Vulnerabilidad | Explicación sencilla | Impacto posible | ¿Puede detectarla Slither? |
-|---|---|---|---|
+|||||
 | Reentrancy | Un contrato externo vuelve a llamar antes de que termine la ejecución original. | Robo o bloqueo de fondos. | A veces sí. |
 | Access control | Una función sensible no comprueba quién la llama. | Cualquier usuario podría ejecutar acciones críticas. | A veces sí. |
 | tx.origin | Se usa `tx.origin` para autorización. | Riesgo de phishing o bypass de permisos. | Sí, en muchos casos. |
 
----
+
 
 # Fase 2: Diseño del laboratorio
 
@@ -672,7 +879,7 @@ Ejemplo de flujo de uso:
 8. Generar informe Markdown.
 ```
 
----
+
 
 # Fase 3: Preparación del entorno técnico
 
@@ -773,7 +980,7 @@ Solución:
 Cerrar y abrir la terminal para recargar el PATH.
 ~~~
 
----
+
 
 # Fase 4: Primer proyecto Solidity
 
@@ -857,7 +1064,7 @@ Qué detecta Slither y qué no detecta.
 Enlaces utilizados.
 ```
 
----
+
 
 # Fase 5: Análisis con Slither
 
@@ -907,23 +1114,23 @@ Incluid:
 
 ## Slither
 
-### Qué es
+- Qué es
 
-### Para qué sirve
+- Para qué sirve
 
-### Cómo se instala
+- Cómo se instala
 
-### Cómo se ejecuta
+- Cómo se ejecuta
 
-### Qué tipo de resultados genera
+- Qué tipo de resultados genera
 
-### Ejemplo de finding
+- Ejemplo de finding
 
-### Limitaciones
+- Limitaciones
 
-### Problemas encontrados
+- Problemas encontrados
 
-### Conclusión
+- Conclusión
 ```
 
 ## 5.3. Importante: no todo warning es una vulnerabilidad
@@ -939,7 +1146,7 @@ Por cada finding relevante, intentad responder:
 - ¿cómo se arreglaría?
 - ¿hay un falso positivo?
 
----
+
 
 # Fase 6: Automatización con GitHub Actions
 
@@ -1037,7 +1244,7 @@ Contenido mínimo:
 ## 6. Decisiones tomadas
 ```
 
----
+
 
 # Fase 7: Base de datos de resultados
 
@@ -1145,7 +1352,7 @@ Debe explicar:
 - ejemplos de consultas;
 - limitaciones del modelo.
 
----
+
 
 # Fase 8: Generación de informes
 
@@ -1196,24 +1403,24 @@ Este informe debería incluir:
 **Archivo:** `contracts/vulnerable-examples/TxOriginExample.sol`  
 **Línea:** 18  
 
-### Descripción
+- Descripción
 
 El contrato utiliza `tx.origin` para comprobar permisos. Esta práctica puede permitir ataques de phishing en los que un contrato malicioso induce a una víctima a ejecutar una transacción.
 
-### Impacto
+- Impacto
 
 Un atacante podría conseguir que un usuario autorizado ejecute una acción sin comprender realmente qué contrato está invocando.
 
-### Recomendación
+- Recomendación
 
 Usar `msg.sender` para autorización directa y aplicar patrones de control de acceso más robustos.
 
-### Estado
+- Estado
 
 Detectado automáticamente por Slither y revisado manualmente.
 ```
 
----
+
 
 # Fase 9: Auditoría de logs e incidencias
 
@@ -1255,7 +1462,7 @@ Plantilla:
 ## 2. Incidencias detectadas
 
 | ID | Fecha | Fuente | Descripción | Causa | Solución | Estado |
-|---|---|---|---|---|---|---|
+||||||||
 | INC-001 | 2026-XX-XX | Slither | Error al compilar contrato | Versión incorrecta de Solidity | Configurar versión correcta | Resuelta |
 
 ## 3. Ejemplos de logs
@@ -1276,24 +1483,24 @@ Ejemplo:
 ```markdown
 ## INC-003: Error en GitHub Actions al instalar Slither
 
-### Síntoma
+- Síntoma
 
 El workflow fallaba en el paso `pip install slither-analyzer`.
 
-### Causa
+- Causa
 
 La versión de Python usada no era compatible con una dependencia.
 
-### Solución
+- Solución
 
 Se actualizó el workflow para usar una versión compatible de Python.
 
-### Evidencia
+- Evidencia
 
 Se adjunta enlace al run de GitHub Actions y fragmento del log.
 ```
 
----
+
 
 # Fase 10: Informe final y presentación
 
@@ -1352,7 +1559,7 @@ La presentación debe responder a estas preguntas:
 - ¿qué mejoraríais si tuvierais más tiempo?
 - ¿qué habéis aprendido?
 
----
+
 
 # Plantillas útiles
 
@@ -1371,36 +1578,36 @@ Contenido:
 
 ## Semana X
 
-### Objetivos de la semana
+- Objetivos de la semana
 
 - 
 
-### Trabajo realizado
+- Trabajo realizado
 
 - 
 
-### Problemas encontrados
+- Problemas encontrados
 
 - 
 
-### Soluciones aplicadas
+- Soluciones aplicadas
 
 - 
 
-### Decisiones tomadas
+- Decisiones tomadas
 
 - 
 
-### Recursos consultados
+- Recursos consultados
 
 - 
 
-### Pendiente para la próxima semana
+- Pendiente para la próxima semana
 
 - 
 ```
 
----
+
 
 ## Plantilla de decisión técnica
 
@@ -1430,7 +1637,7 @@ Por qué se ha elegido.
 Qué ventajas e inconvenientes tiene.
 ```
 
----
+
 
 ## Plantilla de guía de uso
 
@@ -1454,7 +1661,7 @@ Qué ventajas e inconvenientes tiene.
 ## 8. Resolución de problemas comunes
 ```
 
----
+
 
 # Criterios de calidad
 
@@ -1509,7 +1716,7 @@ El proyecto se considerará bien realizado si cumple estos criterios:
 - Las decisiones se documentan.
 - El diario semanal refleja progreso real.
 
----
+
 
 # Posibles ampliaciones
 
@@ -1543,7 +1750,7 @@ Si el proyecto básico se completa pronto, se pueden añadir mejoras.
 
 Estas ampliaciones no son obligatorias. Es mejor entregar un proyecto pequeño, claro y bien documentado que uno grande y confuso.
 
----
+
 
 # Uso responsable de inteligencia artificial
 
@@ -1567,12 +1774,12 @@ Una buena práctica es añadir al diario semanal una sección:
 - Qué errores produjo.
 ```
 
----
+
 
 # Glosario inicial
 
 | Término | Significado |
-|---|---|
+|||
 | Ethereum | Red blockchain programable donde se pueden ejecutar contratos inteligentes. |
 | Smart contract | Programa que vive en blockchain y se ejecuta mediante transacciones. |
 | Solidity | Lenguaje usado para escribir contratos inteligentes en Ethereum. |
@@ -1587,7 +1794,7 @@ Una buena práctica es añadir al diario semanal una sección:
 | Docker | Tecnología para ejecutar aplicaciones en contenedores. |
 | SQLite | Base de datos ligera basada en un único archivo. |
 
----
+
 
 # Checklist final
 
@@ -1609,7 +1816,7 @@ Antes de dar el proyecto por terminado, revisad:
 - [ ] No hay secretos, claves privadas ni información sensible.
 - [ ] Todo el trabajo importante está documentado.
 
----
+
 
 # Cierre
 
