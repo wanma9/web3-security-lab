@@ -17,7 +17,6 @@ El objetivo principal del laboratorio es instalar y configurar la herramienta Sl
   - **Comandos de instalación**:
     ```
     sudo apt update;
-    sudo apt install python3 python3-pip pipx;
     sudo snap install solc;
     pipx install slither-analyzer
     ```
@@ -31,6 +30,10 @@ El objetivo principal del laboratorio es instalar y configurar la herramienta Sl
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null;
     sudo apt install docker-ce docker-ce-cli containerd.io;
     sudo usermod -aG docker $USER
+    ```
+  - **Descarga de imagen**:
+    ```
+    docker pull trailofbits/slither
     ```
 
 - **Git**: Para clonar repositorios y gestionar versiones de contratos de ejemplo.
@@ -104,12 +107,12 @@ Instalar Slither y documentar el proceso.
 
 ## Tareas
 
-- [ ] Revisar documentación oficial.
-- [ ] Instalar dependencias.
-- [ ] Ejecutar Slither sobre un contrato de prueba.
-- [ ] Guardar salida en `reports/slither/`.
-- [ ] Documentar errores encontrados.
-- [ ] Actualizar `docs/01-instalacion-entorno.md`.
+- [x] Revisar documentación oficial.
+- [x] Instalar dependencias.
+- [x] Ejecutar Slither sobre un contrato de prueba.
+- [x] Guardar salida en `reports/slither/`.
+- [x] Documentar errores encontrados.
+- [x] Actualizar `docs/01-instalacion-entorno.md`.
 
 ## Criterio de finalización
 
