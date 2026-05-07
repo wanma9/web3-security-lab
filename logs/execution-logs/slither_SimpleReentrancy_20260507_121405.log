@@ -1,0 +1,5 @@
+[INFO] Ejecutando Slither sobre: /home/pc/Documentos/GitHub/web3-security-lab/contracts/vulnerable-examples/SimpleReentrancy.sol
+[INFO] Contrato: SimpleReentrancy
+[INFO] Reporte: reports/slither/slither_SimpleReentrancy_20260507_121405.json
+
+./log_slither_execution.sh: línea 62: slither: orden no encontrada

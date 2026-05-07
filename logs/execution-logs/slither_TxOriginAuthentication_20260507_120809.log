@@ -1,0 +1,5 @@
+[INFO] Ejecutando Slither sobre: /home/pc/Documentos/GitHub/web3-security-lab/contracts/vulnerable-examples/TxOriginAuthentication.sol
+[INFO] Contrato: TxOriginAuthentication
+[INFO] Reporte: reports/slither/slither_TxOriginAuthentication_20260507_120809.json
+
+./log_slither_execution.sh: línea 62: slither: orden no encontrada

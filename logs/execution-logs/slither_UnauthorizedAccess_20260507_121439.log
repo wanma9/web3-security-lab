@@ -1,0 +1,5 @@
+[INFO] Ejecutando Slither sobre: /home/pc/Documentos/GitHub/web3-security-lab/contracts/vulnerable-examples/UnauthorizedAccess.sol
+[INFO] Contrato: UnauthorizedAccess
+[INFO] Reporte: reports/slither/slither_UnauthorizedAccess_20260507_121439.json
+
+./log_slither_execution.sh: línea 62: slither: orden no encontrada

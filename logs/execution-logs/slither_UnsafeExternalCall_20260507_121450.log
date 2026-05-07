@@ -1,0 +1,5 @@
+[INFO] Ejecutando Slither sobre: /home/pc/Documentos/GitHub/web3-security-lab/contracts/vulnerable-examples/UnsafeExternalCall.sol
+[INFO] Contrato: UnsafeExternalCall
+[INFO] Reporte: reports/slither/slither_UnsafeExternalCall_20260507_121450.json
+
+./log_slither_execution.sh: línea 62: slither: orden no encontrada
