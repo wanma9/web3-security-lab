@@ -124,28 +124,124 @@ docs/03-herramientas-analizadas.md
 Incluid:
 
 ```markdown
-# Herramientas analizadas
+# Herramienta analizada: Slither
 
-## Slither
+## Qué es
 
-- Qué es
+Slither es una herramienta de análisis estático para contratos inteligentes escritos en Solidity.  
+Permite detectar errores, vulnerabilidades y malas prácticas sin necesidad de ejecutar el contrato.
 
-- Para qué sirve
+---
 
-- Cómo se instala
+## Para qué sirve
 
-- Cómo se ejecuta
+Se utiliza para revisar la seguridad del código y encontrar posibles problemas antes de desplegar un smart contract.
 
-- Qué tipo de resultados genera
+Algunas cosas que puede detectar:
 
-- Ejemplo de finding
+- Reentrancy
+- Uso inseguro de `tx.origin`
+- Variables sin inicializar
+- Dependencia de timestamps
+- Problemas de visibilidad
+- Llamadas externas peligrosas
 
-- Limitaciones
+---
 
-- Problemas encontrados
+## Cómo se instala
 
-- Conclusión
+```bash
+pip install slither-analyzer
 ```
+
+Comprobar instalación:
+
+```bash
+slither --version
+```
+
+---
+
+## Cómo se ejecuta
+
+Analizar un contrato:
+
+```bash
+slither contrato.sol
+```
+
+Analizar un proyecto completo:
+
+```bash
+slither .
+```
+
+Ejecutar un detector concreto:
+
+```bash
+slither contrato.sol --detect reentrancy
+```
+
+---
+
+## Qué tipo de resultados genera
+
+Slither genera warnings e información sobre posibles vulnerabilidades.
+
+Ejemplo:
+
+```text
+Reentrancy in withdraw(uint256)
+Severity: High
+Confidence: Medium
+```
+
+También puede exportar resultados en JSON y mostrar métricas del contrato.
+
+---
+
+## Ejemplo de finding
+
+Código vulnerable:
+
+```solidity
+function withdraw(uint amount) public {
+    require(balance[msg.sender] >= amount);
+
+    (bool success,) = msg.sender.call{value: amount}("");
+    require(success);
+
+    balance[msg.sender] -= amount;
+}
+```
+
+Problema detectado:
+
+La llamada externa ocurre antes de actualizar el balance, lo que puede provocar una vulnerabilidad de reentrancy.
+
+Posible solución:
+
+Actualizar primero el balance y después realizar la llamada externa.
+
+---
+
+## Limitaciones
+
+- No detecta todas las vulnerabilidades.
+- Puede generar falsos positivos.
+- No sustituye una auditoría manual.
+- Algunos warnings no son realmente explotables.
+
+---
+
+## Problemas encontrados
+
+- Errores con versiones de Solidity.
+- Dependencias faltantes de `solc`.
+- Muchos warnings en proyectos grandes.
+- Resultados difíciles de interpretar al principio.
+
+---
 
 ## 5.3. Importante: no todo warning es una vulnerabilidad
 
@@ -159,3 +255,11 @@ Por cada finding relevante, intentad responder:
 - ¿es realmente grave?
 - ¿cómo se arreglaría?
 - ¿hay un falso positivo?
+
+---
+
+## Conclusión
+
+Slither es una herramienta muy útil para analizar contratos inteligentes en Solidity y detectar posibles problemas de seguridad de forma rápida.
+
+Aun así, los resultados deben revisarse manualmente porque no todos los warnings representan vulnerabilidades reales.
