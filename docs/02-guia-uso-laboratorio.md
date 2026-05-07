@@ -1,119 +1,252 @@
-# Diseño del laboratorio
+# Fase 3: Preparación del entorno técnico
 
-## 1. Objetivo del laboratorio
+En esta fase se prepara el entorno mínimo para poder trabajar.
 
-El objetivo principal del laboratorio es instalar y configurar la herramienta Slither para el análisis de seguridad en contratos inteligentes de Solidity, y documentar el proceso completo de instalación y uso. Esto permitirá a los usuarios del laboratorio realizar análisis estáticos de vulnerabilidades en contratos inteligentes de manera efectiva, contribuyendo al aprendizaje y práctica de seguridad en el ecosistema Web3, el ejemplo de prueba del laboratorio se realizará en el sistema Ubuntu 24.04.
+## 3.1. Herramientas recomendadas
 
-## 2. Herramientas seleccionadas
+El laboratorio debería poder funcionar, idealmente, con:
 
-- **Python**: Lenguaje de programación requerido para ejecutar Slither, ya que está desarrollado en Python.
-  - **Comandos de instalación**:
-    ```
-    sudo apt update;
-    sudo apt install python3 python3-pip pipx;
-    ```
+- Git;
+- GitHub;
+- Docker;
+- Python 3;
+- Node.js;
+- Foundry;
+- Slither;
+- SQLite;
+- editor de código, preferiblemente VS Code.
 
-- **Slither**: Analizador estático de seguridad para contratos inteligentes en Solidity. Es la herramienta principal para detectar vulnerabilidades comunes como reentrancy, overflow/underflow, y otros problemas de seguridad.
-  - **Comandos de instalación**:
-    ```
-    sudo apt update;
-    sudo snap install solc;
-    pipx install slither-analyzer
-    ```
+## 3.2. Documento de instalación
 
-- **Docker**: Utilizado para contenerizar el entorno de ejecución de Slither, facilitando la instalación y evitando conflictos de dependencias.
-  - **Comandos de instalación** (para Ubuntu/Debian):
-    ```
-    sudo apt update;
-    sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release;
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg;
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null;
-    sudo apt install docker-ce docker-ce-cli containerd.io;
-    sudo usermod -aG docker $USER
-    ```
-  - **Descarga de imagen**:
-    ```
-    docker pull trailofbits/slither
-    ```
+Entregable:
 
-- **Git**: Para clonar repositorios y gestionar versiones de contratos de ejemplo.
-  - **Comandos de instalación**:
-    ```
-    sudo apt update;
-    sudo apt install git
-    ```
+```text
+docs/01-instalacion-entorno.md
+```
 
-- **Herramientas de logging**: Scripts internos para guardar logs de ejecución en `logs/execution-logs/`, reportes en `reports/slither/` y registros de incidentes en `logs/incident-logs/`.
-  - Scripts:
-    - `scripts/log_slither_execution.sh`
-    - `scripts/save_incident_log.sh`
-  - Uso típico:
-    ```
-    bash scripts/log_slither_execution.sh <Ruta_del_contrato>
-    bash scripts/save_incident_log.sh <"Mensaje_de_error">
-    ```
+Debe incluir:
 
-## 3. Contratos o proyectos de ejemplo
+- sistema operativo usado;
+- versiones de herramientas;
+- comandos de instalación;
+- problemas encontrados;
+- soluciones aplicadas;
+- capturas si son útiles;
+- cómo comprobar que todo funciona.
 
-Se utilizarán los contratos inteligentes ubicados en la carpeta `contracts/vulnerable-examples/`. Estos contratos contienen ejemplos intencionalmente vulnerables para demostrar las capacidades de detección de Slither. Los contratos incluyen casos como:
-- Contratos con vulnerabilidades de reentrancy.
-- Ejemplos de overflow/underflow.
-- Contratos con problemas de acceso no autorizado.
+Ejemplo de sección:
 
-Contratos de prueba incluidos:
-- `contracts/vulnerable-examples/SimpleReentrancy.sol`
-- `contracts/vulnerable-examples/UncheckedOverflow.sol`
-- `contracts/vulnerable-examples/UnauthorizedAccess.sol`
+~~~markdown
+## Comprobación de instalación
 
-## 4. Flujo de uso previsto
+Ejecutar:
 
-El flujo de uso para una persona usuaria del laboratorio será el siguiente:
-1. Revisar la documentación oficial de Slither.
-2. Instalar las dependencias necesarias (Python, Docker, etc.).
-3. Ejecutar Slither sobre un contrato de prueba seleccionado de `contracts/vulnerable-examples/`.
-4. Guardar la salida del análisis en la carpeta `reports/slither/`.
-5. Documentar cualquier error encontrado durante el proceso en `logs/execution-logs/` o `logs/incident-logs/`.
-6. Actualizar la documentación en `docs/01-instalacion-entorno.md` con lecciones aprendidas o mejoras.
+```bash
+git --version
+docker --version
+python3 --version
+node --version
+forge --version
+slither --version
+sqlite3 --version
+```
 
-## 5. Resultados esperados
+Resultado esperado:
 
-- Una instalación funcional de Slither que permita ejecutar análisis sin errores.
-- Reportes de análisis guardados en `reports/slither/` con detección de vulnerabilidades en contratos de ejemplo.
-- Documentación actualizada y clara que permita a otra persona replicar el proceso sin dificultades.
-- Logs de ejecución que registren el proceso y cualquier incidente para análisis posterior.
-- Criterio de finalización: Otra persona puede seguir la guía y ejecutar Slither correctamente sobre contratos de ejemplo.
+Ubuntu 24.04
+git version 2.43.0
+Docker version 29.4.2, build 055a478
+Python 3.12.3
+Node v18.19.1
+forge Version: 1.6.0-v1.7.0
+slither 0.11.5
+sqlite3 3.45.1
 
-## 6. Riesgos técnicos
+~~~markdown
+## Instalación de Git
 
-- **Problemas de compatibilidad**: Versiones incompatibles de Python o Docker pueden causar errores durante la instalación o ejecución.
-- **Dependencias faltantes**: Falta de bibliotecas requeridas (como solc para compilación de Solidity) puede impedir el funcionamiento de Slither.
-- **Errores en contratos**: Los contratos de ejemplo pueden tener sintaxis incorrecta o incompatibilidades que generen falsos positivos/negativos en el análisis.
-- **Limitaciones de Docker**: En entornos Windows, Docker puede tener problemas de configuración o permisos.
-- **Cambios en herramientas**: Actualizaciones de Slither o sus dependencias pueden romper la compatibilidad con la guía documentada.
-- **Rendimiento**: Análisis de contratos grandes pueden consumir recursos significativos, potencialmente causando timeouts o errores de memoria.
+Comando utilizado:
 
-## 7. Decisiones tomadas
+```bash
+sudo apt update;
+sudo apt install git
+```
 
-- **Selección de Slither**: Elegido por ser la herramienta estándar y más utilizada en la comunidad de seguridad de contratos inteligentes, con soporte activo y amplia documentación.
-- **Uso de Docker**: Para simplificar la instalación y evitar conflictos de entorno, especialmente en sistemas Windows.
-- **Contratos de ejemplo**: Utilizar contratos vulnerables internos en lugar de externos para mantener el control y la consistencia del laboratorio.
-- **Estructura de carpetas**: Organizar outputs en `reports/slither/`, `logs/execution-logs/`, y `logs/incident-logs/` para una separación clara de resultados y debugging.
-- **Documentación en español**: Dado que el proyecto está en español, mantener la documentación en este idioma para accesibilidad.
-- **Enfoque en instalación**: Priorizar la documentación del proceso de instalación sobre análisis avanzados, ya que es el primer paso para usuarios principiantes.
+Comprobación:
 
-## Objetivo
+```bash
+git --version
+```
+~~~
 
-Instalar Slither y documentar el proceso.
+~~~markdown
+## Instalación de Docker
 
-## Tareas
+Comando utilizado:
 
-- [x] Revisar documentación oficial.
-- [x] Instalar dependencias.
-- [x] Ejecutar Slither sobre un contrato de prueba.
-- [x] Guardar salida en `reports/slither/`.
-- [x] Documentar errores encontrados.
-- [x] Actualizar `docs/01-instalacion-entorno.md`.
+```bash
+  sudo apt update;
+  sudo apt install apt-transport-https ca-certificates curl gnupg lsb-release;
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg;
+  echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null;
+  sudo apt install docker-ce docker-ce-cli containerd.io;
+```
 
-## Criterio de finalización
+Comprobación:
 
-Otra persona puede seguir la guía y ejecutar Slither correctamente.
+```bash
+  docker --version
+```
+Problema encontrado:
+
+Hay que instalar dependencias
+El usuario actual no pertenece al grupo del servicio docker
+
+Solución:
+
+```bash
+  sudo usermod -aG docker $USER
+```
+~~~
+
+~~~markdown
+## Instalación de Python
+
+Comando utilizado:
+
+```bash
+  sudo apt update;
+  sudo apt install python3 python3-pip pipx;
+```
+
+Comprobación:
+
+```bash
+python3 --version
+```
+~~~
+
+~~~markdown
+## Instalación de Node
+
+Comando utilizado:
+
+```bash
+sudo apt update;
+sudo apt install nodejs;
+```
+
+Comprobación:
+
+```bash
+node --version
+```
+~~~
+
+~~~markdown
+## Instalación de Forge
+
+Comando utilizado:
+
+```bash
+sudo curl -L https://foundry.paradigm.xyz | bash;
+sudo foundryup;
+sudo echo 'export PATH="$HOME/.foundry/bin:$PATH"' >> ~/.bashrc;
+sudo source ~/.bashrc;
+sudo hash -r;
+```
+
+Comprobación:
+
+```bash
+forge --version
+```
+
+
+~~~
+
+~~~markdown
+## Instalación de Slither
+
+Comando utilizado:
+
+```bash
+sudo apt update;
+sudo pipx install slither-analyzer
+```
+
+Comprobación:
+
+```bash
+slither --version
+```
+~~~
+
+
+~~~markdown
+## Instalación de Sqlite3
+
+Comando utilizado:
+
+```bash
+sudo apt update;
+sudo apt install sqlite3;
+```
+
+Comprobación:
+
+```bash
+sqlite3 --version
+```
+~~~
+
+### 3.3 Cómo comprobar que todo funciona.
+
+
+```bash
+docker run hello-world;
+forge init test_project;
+sqlite3 test.db
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+4f55086f7dd0: Pull complete 
+d5e71e642bf5: Download complete 
+Digest: sha256:f9078146db2e05e794366b1bfe584a14ea6317f44027d10ef7dad65279026885
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+Initializing /home/pc/test_project...
+Installing forge-std in /home/pc/test_project/lib/forge-std (url: https://github.com/foundry-rs/forge-std, tag: None)
+Clonando en '/home/pc/test_project/lib/forge-std'...
+remote: Enumerating objects: 2977, done.
+remote: Counting objects: 100% (292/292), done.
+remote: Compressing objects: 100% (138/138), done.
+remote: Total 2977 (delta 249), reused 155 (delta 154), pack-reused 2685 (from 3)
+Recibiendo objetos: 100% (2977/2977), 1.13 MiB | 2.69 MiB/s, listo.
+Resolviendo deltas: 100% (1989/1989), listo.
+    Installed forge-std tag=v1.16.1@620536fa5277db4e3fd46772d5cbc1ea0696fb43
+    Initialized forge project
+SQLite version 3.45.1 2024-01-30 16:01:20
+Enter ".help" for usage hints.
+sqlite> 
+```
